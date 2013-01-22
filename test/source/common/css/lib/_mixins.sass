@@ -1,0 +1,17 @@
+
+
+//----------------------------------------------------------------------
+// selection
+
+$prefixes: ("-webkit-","-moz-", "-o-", "")
+=selection($color, $background) 
+  @each $prefix in $prefixes 
+    ::#{$prefix}selection 
+      color: $color
+      background: $background
+
+//----------------------------------------------------------------------
+// clearfix
+
+=cf 
+  +clearfix

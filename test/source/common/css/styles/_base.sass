@@ -1,0 +1,71 @@
+
+//----------------------------------------------------------------------
+// site property
+
+$color-def: #888
+$color-selection: #999
+$color-background: #666
+
++selection($color-selection, $color-background)
+
+//----------------------------------------------------------------------
+// site mixin
+
+@mixin font-defSet
+  +font-sans
+  font-size: 14px
+  color: $color-def
+  text-decoration: none
+  font-weight: normal
+
+@mixin font-defSet-small
+  +font-defSet
+  font-size: 10px
+
+//----------------------------------------------------------------------
+// 
+
+body, h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+  +font-defSet
+
+a, dl, ul, p
+  +font-defSet
+  line-height: 1.8em
+
+a
+  line-height: 1.8em
+  text-decoration: underline
+  &:hover
+    text-decoration: none
+
+body
+  margin: 30px
+
+//----------------------------------------------------------------------
+// 
+
+.description
+  h1
+    font-size: 20px
+    margin-bottom: 5px
+  h2
+    +font-defSet-small
+    margin-bottom: 20px
+
+hr
+  margin-bottom: 20px
+
+.links
+  margin-bottom: 20px
+
+.set
+  @extend %bset
+  margin-bottom: 20px
+  +cf
+  li
+    margin-right: 20px
+
+.small
+  +font-defSet-small
+  
+  

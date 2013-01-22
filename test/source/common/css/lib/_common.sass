@@ -1,0 +1,212 @@
+
+//----------------------------------------------------------------------
+// margin,padding
+
+@for $i from 0 through 10 
+  .mt#{($i*10)} 
+    margin-top: #{($i*10)}px
+
+@for $i from 0 through 10 
+  .mb#{($i*10)} 
+    margin-bottom: #{($i*10)}px
+
+@for $i from 0 through 10 
+  .pt#{($i*10)} 
+    padding-top: #{($i*10)}px
+
+@for $i from 0 through 10 
+  .pb#{($i*10)} 
+    padding-bottom: #{($i*10)}px
+
+//----------------------------------------------------------------------
+// 
+
+//font-size
+
+@for $i from 8 through 20 
+  .f#{($i)} 
+    font-size: #{($i)}px
+
+//----------------------------------------------------------------------
+// 
+
+//float
+
+.r
+  float: right
+
+.l
+  float: left
+
+.c
+  clear: both
+  display: block
+  overflow: hidden
+  visibility: hidden
+  width: 0
+  height: 0
+
+//----------------------------------------------------------------------
+// margin,padding
+
+*
+  margin: 0
+  padding: 0
+
+ul,li,dl,dd,dt
+  margin: 0
+  padding: 0
+
+li
+  list-style: none
+
+img
+  margin: 0
+  padding: 0
+  line-height: 0
+  vertical-align: bottom
+  border: none
+
+//----------------------------------------------------------------------
+// extend
+
+//hr
+div.hr
+  @extend %hr
+
+hr
+  @extend %hr
+
+//centered
+ul.centered
+  @extend %centered
+  
+//imgset
+div.imgset
+  @extend %imgset
+
+//bset
+ul.bset
+  @extend %bset
+
+.fade
+  @extend %fade
+
+//----------------------------------------------------------------------
+// list
+
+//arw
+ul.arw
+  list-style: none
+  li
+    padding: 0px 0px 0px 10px
+    background: url(../images/arw.gif) no-repeat 0px 5px
+    text-indent: 0px
+
+//bullet
+ul.bullet
+  margin-left: 10px
+  list-style: none
+  li
+    text-indent: -10px
+
+//breadcrumb
+ul.breadcrumb
+  li
+    font-size: 10px
+    float: left
+    padding: 0 2px 0 0
+    a
+      padding: 0 10px 0 0
+      background: url(../images/arw.gif) no-repeat right 3px
+
+//----------------------------------------------------------------------
+// dl
+
+//dl2table
+dl.list
+  position: relative
+  baseline: top
+  border-top: 1px #ccc solid
+  min-height: 1px
+  _height: 1%
+  overflow: hidden
+  dt
+    clear: both
+    baseline: top
+    float: left
+    padding: 10px 0 10px 0
+    width: 140px
+  dd
+    position: relative
+    baseline: top
+    padding: 10px 0 10px 0
+    padding-left: 160px
+    border-bottom: 1px #ccc solid
+
+dl.flist
+  position: relative
+  *zoom: 1
+  +clearfix
+  border-bottom: 1px #ccc solid
+  width: 360px
+  dt
+    clear: both
+    float: left
+    baseline: top
+    padding: 10px 0 10px 0
+    width: 160px
+    border-top: 1px #ccc solid
+    display: block
+  dd
+    position: relative
+    float: left
+    baseline: top
+    padding: 10px 0 10px 0
+    border-top: 1px #ccc solid
+    width: 200px
+    display: block
+    
+dl.table
+  *zoom: 1
+  &:before,
+  &:after
+    display: table
+    line-height: 0
+    content: ""
+  &:after
+    clear: both
+  dt
+    float: left
+    width: 160px
+    overflow: hidden
+    clear: left
+    text-align: right
+    text-overflow: ellipsis
+    white-space: nowrap
+    padding: 10px 0
+  dd
+    padding: 10px 0
+    margin-left: 120px
+
+dl.table.lw100
+  dt
+    font-weight: bold
+    width: 100px
+  dd
+    margin-left: 120px
+
+//----------------------------------------------------------------------
+// lineTable
+ 
+table.linetable
+  td
+    padding: 2px 10px 2px 10px
+    border: 1px #cccccc solid
+  td.bg
+    background-color: #dddddd
+  td.bg1
+    background-color: #eeeeee
+  td.bg2
+    background-color: #ffffff
+
